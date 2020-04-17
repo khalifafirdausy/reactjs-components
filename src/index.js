@@ -13,8 +13,8 @@ class App extends React.Component {
 		return(
 			<React.Fragment>
 				<Container>
-					{/* <HomePage /> */}
-					<LearnState />
+					<HomePage />
+					{/* <LearnState /> */}
 				</Container>
 			</React.Fragment>
 		)

@@ -3,51 +3,24 @@ import { Card, CardImg, CardDeck, CardText, CardBody, CardTitle, Button } from '
 import molly from './molly.png';
 
 class PostCard extends React.Component {
-  
+
   render(){
     return(
       <React.Fragment>
         <CardDeck>
-          <Card>
-            <CardImg top width="10%" src={molly} alt="img-name" />
-            <CardBody>
-              <CardTitle>Maulana Yusuf</CardTitle>
-              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-              <Button color="info">Edit</Button>{' '}
-              <Button color="danger">Delete</Button>{' '}
-            </CardBody>
-          </Card>
-          
-          <Card>
-            <CardImg top width="10%" src={molly} alt="img-name" />
-            <CardBody>
-              <CardTitle>Maulana Yusuf</CardTitle>
-              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-              <Button color="info">Edit</Button>{' '}
-              <Button color="danger">Delete</Button>{' '}
-            </CardBody>
-          </Card>
-          
-          <Card>
-            <CardImg top width="10%" src={molly} alt="img-name" />
-            <CardBody>
-              <CardTitle>Maulana Yusuf</CardTitle>
-              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-              <Button color="info">Edit</Button>{' '}
-              <Button color="danger">Delete</Button>{' '}
-            </CardBody>
-          </Card>
-          
-          <Card>
-            <CardImg top width="10%" src={molly} alt="img-name" />
-            <CardBody>
-              <CardTitle>Maulana Yusuf</CardTitle>
-              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-              <Button color="info">Edit</Button>{' '}
-              <Button color="danger">Delete</Button>{' '}
-            </CardBody>
-          </Card>
-
+          {this.props.bioData.bio.map((data) => {
+            return(
+              <Card>
+                <CardImg top width="10%" src={molly} alt="img-name" />
+                <CardBody>
+                  <CardTitle>{data.name}</CardTitle>
+                  <CardText>{data.description}</CardText>
+                  <Button color="info">Edit</Button>{' '}
+                  <Button color="danger">Delete</Button>{' '}
+                </CardBody>
+              </Card>
+            )
+          })}
         </CardDeck>
       </React.Fragment>
     )
